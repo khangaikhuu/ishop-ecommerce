@@ -27,7 +27,7 @@ export default function CategoriesTable() {
 
   const columns = [
     { field: "id", headerName: "ID", width: 150 },
-    { field: "product_category_name", headerName: "Role name", width: 150 },
+    { field: "product_category_name", headerName: "Category name", width: 150 },
     { field: "product_category_description", headerName: "Description" },
     {
       field: "actions",
