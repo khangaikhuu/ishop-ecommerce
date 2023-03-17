@@ -10,8 +10,8 @@ import { useState } from "react";
 
 import { ToastContainer } from "react-toastify";
 import { fetchPopularCategory, fetchProducts } from "../services/fetchData";
-const POPULAR_URL = "http://localhost:8080/api/popular";
-const PRODUCT_URL = "http://localhost:8080/api/products";
+const POPULAR_URL = "http://localhost:8181/api/popular";
+const PRODUCT_URL = "http://localhost:8181/api/products";
 
 function Home({ wishlist, setWishlist, basket, setBasket }) {
   //   const [wishlist, setWishlist] = useState([]);
