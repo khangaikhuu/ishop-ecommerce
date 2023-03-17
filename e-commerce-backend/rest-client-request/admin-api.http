@@ -1,9 +1,9 @@
-GET http://localhost:8080/admin/categories HTTP/1.1
+GET http://localhost:8181/admin/categories HTTP/1.1
 Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/admin/category/add HTTP/1.1
+POST http://localhost:8181/admin/category/add HTTP/1.1
 Content-Type: application/json
 
 {

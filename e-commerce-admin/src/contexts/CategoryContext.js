@@ -4,7 +4,7 @@ const CategoryContext = createContext(null);
 
 const CategoryContextProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
-  const URL = "http://localhost:8080/admin/categories";
+  const URL = "http://localhost:8181/admin/categories";
   console.log(categories);
 
   return (

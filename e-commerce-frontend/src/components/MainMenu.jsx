@@ -4,7 +4,7 @@ import { Navbar } from "react-bootstrap";
 import { fetchMenu } from "../services/fetchData";
 
 export default function MainMenu() {
-  const URL = "http://localhost:8080/menu/all";
+  const URL = "http://localhost:8181/menu/all";
 
   const [menus, setMenus] = useState([]);
 
