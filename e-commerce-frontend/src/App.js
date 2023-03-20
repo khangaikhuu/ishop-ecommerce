@@ -1,23 +1,23 @@
-import "./App.css";
-import React from "react";
+import './App.css'
+import React from 'react'
 
-import { Link, Routes, Route } from "react-router-dom";
-import Signup from "./components/Signup";
-import Home from "./components/Home";
-import CallService from "./components/CallService";
-import MainMenu from "./components/MainMenu";
-import SearchBar from "./components/SearchBar";
-import { useState } from "react";
-import ProductDetails from "./components/ProductDetails";
-import Cart from "./components/Cart";
-import SearchResult from "./components/SearchResult";
-
+import { Link, Routes, Route } from 'react-router-dom'
+import Signup from './components/Signup'
+import Home from './components/Home'
+import CallService from './components/CallService'
+import MainMenu from './components/MainMenu'
+import SearchBar from './components/SearchBar'
+import { useState } from 'react'
+import ProductDetails from './components/ProductDetails'
+import Cart from './components/Cart'
+import SearchResult from './components/SearchResult'
+//testing fork
 function App() {
-  const [wishlist, setWishlist] = useState([]);
-  const [basket, setBasket] = useState([]);
+  const [wishlist, setWishlist] = useState([])
+  const [basket, setBasket] = useState([])
   return (
     <div>
-      <div id="product-container" className="container">
+      <div id='product-container' className='container'>
         <CallService />
         <MainMenu />
         <SearchBar
@@ -31,7 +31,7 @@ function App() {
       <div>
         <Routes>
           <Route
-            path="/"
+            path='/'
             element={
               <Home
                 wishlist={wishlist}
@@ -41,10 +41,10 @@ function App() {
               />
             }
           ></Route>
-          <Route path="/signup" element={<Signup />}></Route>
-          <Route path="/search" element={<SearchResult />} />
+          <Route path='/signup' element={<Signup />}></Route>
+          <Route path='/search' element={<SearchResult />} />
           <Route
-            path="/productDetails/:id"
+            path='/productDetails/:id'
             element={
               <ProductDetails
                 wishlist={wishlist}
@@ -55,13 +55,13 @@ function App() {
             }
           ></Route>
           <Route
-            path="/cart"
+            path='/cart'
             element={<Cart basket={basket} setBasket={setBasket} />}
           ></Route>
         </Routes>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
