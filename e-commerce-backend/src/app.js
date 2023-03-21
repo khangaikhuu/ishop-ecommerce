@@ -12,7 +12,7 @@ import adminApi from './routes/admin-api'
 const app = express()
 const PORT = 8080
 const MONGODB_CONNECTION_STRING =
-  'mongodb+srv://MongoTuru:kIbRLDD0euIjTlRh@turumongo.pfftwk3.mongodb.net/test'
+  'mongodb+srv://MongoTuru:*****@turumongo.pfftwk3.mongodb.net/test'
 
 // Middleware functions
 app.use(cors()) // Enable Cross-Origin Resource Sharing
