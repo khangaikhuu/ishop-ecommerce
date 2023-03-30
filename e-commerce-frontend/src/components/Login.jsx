@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function Login() {
   const URL = "http://localhost:8080/auth/login";
 
   const initialState = {
     email: "",
     password: "",
-    error: "dfd",
+    error: "",
+    errorStatus: null,
   };
 
   const [state, setState] = useState(initialState);
+
+  useEffect(() => {
+    console.log("Login");
+  }, [state]);
 
   async function fetchLogin(url) {
     const options = {
@@ -23,7 +28,18 @@ export default function Login() {
     };
     const response = await fetch(url, options);
     const data = await response.json();
-    console.log(data);
+    console.log(data.success);
+
+    if (data.success === true) {
+      setState({ ...state, errorStatus: false });
+      localStorage.setItem("token", data.token);
+    } else {
+      setState({ ...state, errorStatus: true });
+    }
+
+    setState({ ...state, error: data.status });
+
+    console.log(state.errorStatus);
   }
 
   const handleSubmit = (e) => {
@@ -69,7 +85,11 @@ export default function Login() {
             </div>
           </div>
           <div>
-            <p className="text-danger">{state.error}</p>
+            {state.errorStatus ? (
+              <p className="text-success">{state.error}</p>
+            ) : (
+              <p className="text-danger">{state.error}</p>
+            )}
           </div>
 
           <button type="submit" className="btn btn-primary">
