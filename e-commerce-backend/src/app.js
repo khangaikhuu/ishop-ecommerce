@@ -1,15 +1,16 @@
 console.log("iShop E-Commerce Backend");
-
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import * as dotenv from "dotenv"
+dotenv.config()
 import menuApi from "./routes/menu-api";
 import adminApi from "./routes/admin-api";
 
+
 const app = express();
-const PORT = 8080;
-const MONGODB_CONNECTION_STRING =
-  "mongodb+srv://bilguun-enkh:YxIUqiVlCDfo5PCJ@mernstackpineconedb.mwhgdhi.mongodb.net/mb-ecommerce";
+const PORT = process.env.PORT;
+const MONGODB_CONNECTION_STRING = process.env.MONGO_DB_URL
 
 app.use(cors());
 app.use(express.json());
@@ -23,6 +24,6 @@ app.listen(PORT, () => {
     .catch((error) => console.error(error));
 
   console.log(
-    `iSHop E-Commerce application is running on http://localhost:${PORT}`
+    `iShop E-Commerce application is running on http://localhost:${PORT}`
   );
 });
