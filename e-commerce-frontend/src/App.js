@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
 import CallService from "./components/CallService";
@@ -11,6 +11,7 @@ import { useState } from "react";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
 import SearchResult from "./components/SearchResult";
+import Login from "./components/Login";
 
 function App() {
   const [wishlist, setWishlist] = useState([]);
@@ -42,6 +43,8 @@ function App() {
             }
           ></Route>
           <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+
           <Route path="/search" element={<SearchResult />} />
           <Route
             path="/productDetails/:id"
