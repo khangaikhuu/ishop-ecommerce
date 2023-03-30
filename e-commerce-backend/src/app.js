@@ -7,6 +7,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 import menuApi from "./routes/menu-api";
 import adminApi from "./routes/admin-api";
+import authApi from "./routes/auth-api";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/menu", menuApi);
 app.use("/admin", adminApi);
+app.use("/auth", authApi);
 
 app.listen(PORT, () => {
   mongoose
