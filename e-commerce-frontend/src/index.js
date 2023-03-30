@@ -9,13 +9,16 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import { BrowserRouter } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
 import "react-image-gallery/styles/css/image-gallery.css";
+import { LoginProvider } from './context/login-provider';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App />
+      <LoginProvider>
+        <App />
+      </LoginProvider>
     </React.StrictMode>
   </BrowserRouter>
 );
